@@ -1,0 +1,10 @@
+CREATE OR REPLACE FUNCTION base58_encode(uuid)
+RETURNS text
+AS 'base58.so', 'base58_encode'
+IMMUTABLE STRICT LANGUAGE C;
+
+
+CREATE OR REPLACE FUNCTION base58_decode(text)
+RETURNS uuid
+AS 'base58.so', 'base58_decode'
+IMMUTABLE STRICT LANGUAGE C;
